@@ -29,8 +29,8 @@ namespace ReadyPlayerMe.PhotonSupport
             animator = GetComponent<Animator>();
             photonView = GetComponent<PhotonView>();
             
-            leftEye = transform.Find(FULL_BODY_LEFT_EYE_BONE_NAME);
-            rightEye = transform.Find(FULL_BODY_RIGHT_EYE_BONE_NAME);
+            //leftEye = transform.Find(FULL_BODY_LEFT_EYE_BONE_NAME);
+            //rightEye = transform.Find(FULL_BODY_RIGHT_EYE_BONE_NAME);
             
             skinnedMeshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
         }
@@ -52,8 +52,8 @@ namespace ReadyPlayerMe.PhotonSupport
             loader.AvatarConfig = config;
             loader.OnCompleted += (sender, args) =>
             {
-                leftEye.transform.localPosition = args.Avatar.transform.Find(FULL_BODY_LEFT_EYE_BONE_NAME).localPosition;
-                rightEye.transform.localPosition = args.Avatar.transform.Find(FULL_BODY_RIGHT_EYE_BONE_NAME).localPosition;
+                //leftEye.transform.localPosition = args.Avatar.transform.Find(FULL_BODY_LEFT_EYE_BONE_NAME).localPosition;
+                //rightEye.transform.localPosition = args.Avatar.transform.Find(FULL_BODY_RIGHT_EYE_BONE_NAME).localPosition;
                 
                 TransferMesh(args.Avatar);
             };
@@ -67,11 +67,11 @@ namespace ReadyPlayerMe.PhotonSupport
 
             for (int i = 0; i < sourceMeshes.Length; i++)
             {
-                Mesh mesh = sourceMeshes[i].sharedMesh;
-                skinnedMeshRenderers[i].sharedMesh = mesh;
+                //Mesh mesh = sourceMeshes[i].sharedMesh;
+                //skinnedMeshRenderers[i].sharedMesh = mesh;
 
-                Material[] materials = sourceMeshes[i].sharedMaterials;
-                skinnedMeshRenderers[i].sharedMaterials = materials;
+                //Material[] materials = sourceMeshes[i].sharedMaterials;
+                //skinnedMeshRenderers[i].sharedMaterials = materials;
             }
 
             Avatar avatar = sourceAnimator.avatar;
